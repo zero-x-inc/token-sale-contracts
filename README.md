@@ -20,6 +20,13 @@ It is recommended that contractors are paid by transferring tokens from the owne
 
 ## Development
 
+### Install Dependencies
+
+```
+npm install
+```
+
+
 ## Launch testrpc
 
 ```
@@ -33,4 +40,11 @@ testrpc \
 
 ```
 truffle test
+```
+
+## Verifying w/ Oyente
+
+```
+docker pull everconfusedguy/oyente
+docker run -it -v `echo $PWD`:/data everconfusedguy/oyente
 ```

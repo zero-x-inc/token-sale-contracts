@@ -9,10 +9,11 @@
   "license": "MIT",
   "dependencies": {
     "bip39": "2.3.1",
-    "bn.js": "4.11.6",
-    "ethjs-provider-http": "0.1.6",
-    "ethjs-query": "0.2.4",
-    "ethjs-rpc": "0.1.5",
-    "truffle-hdwallet-provider": "0.0.3"
+    "bn.js": "^4.11.6",
+    "ethjs-provider-http": "^0.1.6",
+    "ethjs-query": "^0.2.4",
+    "ethjs-rpc": "^0.1.5",
+    "truffle-hdwallet-provider": "0.0.3",
+    "zeppelin-solidity": "^1.2.0"
   }
 }

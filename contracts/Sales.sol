@@ -4,6 +4,8 @@ import "./Owned.sol";
 import "./HumanStandardToken.sol";
 import "./Locked.sol";
 
+import './SafeMath.sol';
+
 contract Sales is Owned {
   address public wallet;
   HumanStandardToken public token;
