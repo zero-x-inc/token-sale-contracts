@@ -49,3 +49,15 @@ docker pull everconfusedguy/oyente
 docker run -it -v `echo $PWD`:/data everconfusedguy/oyente
 python oyente.py -dl 500 -ll 500 -s /data/contracts/Sales.sol
 ```
+## Deploying to TestNet
+
+Edit `truffle.js` if necessary to point to Ethereum RPC node connected to the Ethereum testnet.
+Also, make sure you have some test ether in the account to deploy contracts.
+
+During development we used the revived Ropstent, testnet and the following faucet to send Ether to it:
+
+http://ipfs.b9lab.com:8080/ipfs/QmTHdYEYiJPmbkcth3mQvEQQgEamFypLhc9zapsBatQW7Y/throttled_faucet.html
+
+```
+truffle deploy --network live
+```
