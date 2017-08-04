@@ -1,5 +1,6 @@
-var Sales = artifacts.require('Sales');
-const fs = require(`fs`);
+const Sales = artifacts.require('Sales');
+const fs = require('fs');
+const abi = require('ethereumjs-abi');
 
 module.exports = function(deployer, network, accounts) {
   var conf;
@@ -7,17 +8,15 @@ module.exports = function(deployer, network, accounts) {
 
   if (network === 'development') {
     conf = JSON.parse(fs.readFileSync(`./conf/development.json`));
-    wallet = accounts[0];
   } else {
     conf = JSON.parse(fs.readFileSync(`./conf/production.json`));
-    wallet = conf['wallet'];
   }
 
   // assert.ok(wallet);
 
   return deployer.deploy(
     Sales,
-    wallet,
+    accounts[0],
     conf['total'],
     conf['name'],
     conf['decimals'],
@@ -27,5 +26,7 @@ module.exports = function(deployer, network, accounts) {
     conf['freezeBlock'],
     conf['cap'],
     conf['locked']
-  );
+  ).then(function(res) {
+    console.log(res);
+  });
 };
