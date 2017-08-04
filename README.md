@@ -47,4 +47,5 @@ truffle test
 ```
 docker pull everconfusedguy/oyente
 docker run -it -v `echo $PWD`:/data everconfusedguy/oyente
+python oyente.py -dl 500 -ll 500 -s /data/contracts/Sales.sol
 ```
