@@ -73,6 +73,7 @@ contract Sales is Owned {
     }
 
     sold = SafeMath.add(sold, tokenPurchase);
+    assert(sold <= cap);
     wallet.transfer(purchaseAmount);
     assert(token.transfer(msg.sender, tokenPurchase));
     PurchasedTokens(msg.sender, tokenPurchase);
