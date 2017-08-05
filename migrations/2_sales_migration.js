@@ -4,7 +4,6 @@ const abi = require('ethereumjs-abi');
 
 module.exports = function(deployer, network, accounts) {
   var conf;
-  var wallet;
 
   if (network === 'development') {
     conf = JSON.parse(fs.readFileSync(`./conf/development.json`));
@@ -12,11 +11,11 @@ module.exports = function(deployer, network, accounts) {
     conf = JSON.parse(fs.readFileSync(`./conf/production.json`));
   }
 
+  var wallet = accounts[0];
   // assert.ok(wallet);
 
-  return deployer.deploy(
-    Sales,
-    accounts[0],
+  var args = [
+    wallet,
     conf['total'],
     conf['name'],
     conf['decimals'],
@@ -26,7 +25,39 @@ module.exports = function(deployer, network, accounts) {
     conf['freezeBlock'],
     conf['cap'],
     conf['locked']
-  ).then(function(res) {
-    console.log(res);
-  });
+  ];
+
+  console.log('args: ' + args.join(','));
+
+  var encoded = abi.rawEncode(
+    [ 
+      'address',
+      'uint256',
+      'string',
+      'uint8',
+      'string',
+      'uint256',
+      'uint256',
+      'uint256',
+      'uint256',
+      'uint256'
+    ],
+    args
+  );
+
+  console.log('encoded argument for Sales contract: ' + encoded.toString('hex'));
+
+  return deployer.deploy(
+    Sales,
+    wallet,
+    conf['total'],
+    conf['name'],
+    conf['decimals'],
+    conf['symbol'],
+    conf['price'],
+    conf['startBlock'],
+    conf['freezeBlock'],
+    conf['cap'],
+    conf['locked']
+  );
 };
