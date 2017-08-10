@@ -1,7 +1,7 @@
 {
   "total": "1000000000000000000",
-  "name": "Z-Token",
-  "symbol": "ZTK",
+  "name": "Open Attribution Token",
+  "symbol": "OAT",
   "decimals": 9,
   "price": 2557181690000000,
   "startBlock": 100,
