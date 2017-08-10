@@ -11,7 +11,7 @@ module.exports = function(deployer, network, accounts) {
     conf = JSON.parse(fs.readFileSync(`./conf/production.json`));
   }
 
-  var wallet = accounts[0];
+  var wallet = conf['wallet'] || accounts[0];
   // assert.ok(wallet);
 
   var args = [
