@@ -4,14 +4,19 @@ const abi = require('ethereumjs-abi');
 
 module.exports = function(deployer, network, accounts) {
   var conf;
+  var wallet;
 
   if (network === 'development') {
-    conf = JSON.parse(fs.readFileSync(`./conf/development.json`));
+    conf = JSON.parse(fs.readFileSync('./conf/development.json'));
+    wallet = accounts[0];
+  } else if (network === 'ropsten') {
+    conf = JSON.parse(fs.readFileSync('./conf/ropsten.json'));
+    wallet = accounts[0];
   } else {
-    conf = JSON.parse(fs.readFileSync(`./conf/production.json`));
+    conf = JSON.parse(fs.readFileSync('./conf/production.json'));
+    wallet = conf['wallet'];
   }
 
-  var wallet = conf['wallet'] || accounts[0];
   // assert.ok(wallet);
 
   var args = [

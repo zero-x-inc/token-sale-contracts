@@ -4,8 +4,8 @@
   "symbol": "OAT",
   "decimals": 9,
   "price": 50000,
-  "startBlock": 100,
-  "freezeBlock": 200,
+  "startBlock": 1466865,
+  "freezeBlock": 2466865,
   "cap": "100000000000000000",
-  "locked": 60
+  "locked": 31104000
 }

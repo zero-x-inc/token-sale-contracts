@@ -4,9 +4,9 @@
   "name": "Open Attribution Token",
   "symbol": "OAT",
   "decimals": 9,
-  "price": 25000000000000,
+  "price": 50000,
   "startBlock": 4139704,
   "freezeBlock": 4490104,
-  "cap": 20000000,
+  "cap": "100000000000000000",
   "locked": 31104000
 }
