@@ -1,7 +1,7 @@
 {
   "total": "1000000000000000000",
-  "name": "Open Attribution Token",
-  "symbol": "OAT",
+  "name": "Digital Attribution Token",
+  "symbol": "DAT",
   "decimals": 9,
   "price": 50000,
   "startBlock": 100,
