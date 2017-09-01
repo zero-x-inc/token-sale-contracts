@@ -4,7 +4,7 @@
   "name": "Digital Attribution Token",
   "symbol": "DAT",
   "decimals": 9,
-  "price": 50000,
+  "price": 25000,
   "startBlock": 4139704,
   "freezeBlock": 4490104,
   "cap": "100000000000000000",
